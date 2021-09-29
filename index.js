@@ -6,18 +6,19 @@ const correctAnswers = ['90°', 'right angled', 'one right angle', '12, 16, 20',
 
 
 
-function calculateScore(){
+function calculateScore(event){
+    event.preventDefault();
+
+    const data = new FormData(quizForm);
     let score = 0;
     let index = 0;
-    const data = new FormData(quizForm);
     for(let value of data.values()){
         if(value === correctAnswers[index]){
             score++;
-            index++;
         }
+        index++;
     }
-    console.log(score);
     output.innerText = "Your score is "+ score;
 }
 
-submitBtn.addEventListener("click", calculateScore);
+quizForm.addEventListener("submit", calculateScore);

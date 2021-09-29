@@ -7,7 +7,7 @@ function areaTriangle(){
         const angle = Number(inputs[0].value) * Number(inputs[1].value);
 
         const area = angle/2;
-        output.innerText = "Area of triangle is "+ area;
+        output.innerText = "Area of triangle is "+ area.toFixed(2);
     }
     else{
         alert("Values should be greater than zero");
